@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1bkluz9" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="activity" name="sample">
+    <decisionTable id="DecisionTable_1dh2r8g" hitPolicy="ANY">
+      <input id="Input_1" label="Day Input" camunda:inputVariable="dayInput">
+        <inputExpression id="InputExpression_1" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_03mg9oh">
+          <text>"Monday","Tuesday"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1qy8qd0" label="Head Count Input" camunda:inputVariable="headCount">
+        <inputExpression id="LiteralExpression_0grvj13" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0r4tk0k">
+          <text>"1","2","3","4"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Activity" name="Act" typeRef="string">
+        <outputValues id="UnaryTests_0s1ejoa">
+          <text>"Shoping","Cycling","Fishing"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0c2eb2u">
+        <inputEntry id="UnaryTests_0uca47u">
+          <text>"Monday"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03knh6i">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w0npvt">
+          <text>"Shoping"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08j0dla">
+        <inputEntry id="UnaryTests_03fodde">
+          <text>"Monday"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00dfvaw">
+          <text>"2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cwq0nj">
+          <text>"Cycling"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14mvscf">
+        <inputEntry id="UnaryTests_0sdsabn">
+          <text>"Tuesday"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xhdljf">
+          <text>"3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dwl1ja">
+          <text>"Fishing"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16d49b1">
+        <inputEntry id="UnaryTests_1e098ye">
+          <text>"Tuesday"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1waifac">
+          <text>"4"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1esb8ah">
+          <text>"Cycling"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b4pwb7">
+        <inputEntry id="UnaryTests_1sgclie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qoobpc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d5sk61">
+          <text>"Shoping"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="activity">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
