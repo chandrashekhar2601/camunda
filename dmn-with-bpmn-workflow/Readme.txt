@@ -13,3 +13,19 @@
 		}
 	}
 }
+
+# Evaluate DMN decision and get result
+http://localhost:8080/engine-rest/decision-definition/key/activity/evaluate
+
+{
+    "variables": {
+        "dayInput": {
+            "value": "Monday",
+            "type": "String"
+        },
+        "headCount": {
+            "value": "1",
+            "type": "String"
+        }
+    }
+}
