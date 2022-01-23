@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_TPM_WF" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="tpmDecisionTable" name="TPM Decision">
+    <decisionTable id="DecisionTable_1g7zw7i" hitPolicy="ANY">
+      <input id="Input_1" label="Data clean up admin" biodi:width="192" camunda:inputVariable="isDataCleanUp">
+        <inputExpression id="InputExpression_1" typeRef="boolean" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_08n86v9" label="Fast track" biodi:width="150" camunda:inputVariable="isFastTrack">
+        <inputExpression id="LiteralExpression_1tmidzq" typeRef="boolean" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0exck4t" label="Is CTA BP Added" camunda:inputVariable="isCTABPAdded">
+        <inputExpression id="LiteralExpression_16jbazy" typeRef="boolean" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0h8fc3j" label="Status" biodi:width="192" camunda:inputVariable="status">
+        <inputExpression id="LiteralExpression_1szb6vk" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1f739a4">
+          <text>"Approved","Rejected","Draft","Pending Approval"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Workflow Type" name="result" typeRef="string">
+        <outputValues id="UnaryTests_0p0t62i">
+          <text>"DATA_CLEANUP_ADMIN","FAST_TRACK_ONLY","FAST_TRACK_WITH_CTA","REGULAR","REGULAR_WITH_CTA"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_1s9jrcn">
+        <inputEntry id="UnaryTests_0zch5t2">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07i1g2z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ur8xtv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lbxiqc">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b271dm">
+          <text>"DATA_CLEANUP_ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gv97ny">
+        <inputEntry id="UnaryTests_0ua68as">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uq5hae">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ujuplr">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r6jzgh">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_166pgc2">
+          <text>"FAST_TRACK_ONLY"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ws8k78">
+        <inputEntry id="UnaryTests_0tdcp8i">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_126mxig">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fglk6f">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08gcc0j">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02mp055">
+          <text>"FAST_TRACK_WITH_CTA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0421oxp">
+        <inputEntry id="UnaryTests_11zmlmo">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fv5ma5">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_017e9su">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00dn608">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_088nloo">
+          <text>"REGULAR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18vyal8">
+        <inputEntry id="UnaryTests_0nhpfdz">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dosjha">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gv8gdw">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yuqngu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s7wfkz">
+          <text>"REGULAR_WITH_CTA"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="tpmDecisionTable">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
