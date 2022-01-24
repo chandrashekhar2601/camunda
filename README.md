@@ -46,5 +46,5 @@ http://localhost:8080/engine-rest/task/7fb04465-76e1-11ec-b3df-fa2a44d56e9b/comp
     }
 }
 ```
-DELETE method type
+## DELETE method type
 http://localhost:8080/engine-rest/task/2dfbc2b1-7d12-11ec-a001-fa2a44d56e9b
