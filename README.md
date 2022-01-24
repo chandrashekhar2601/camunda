@@ -1,7 +1,6 @@
-# camunda
 # Camunda workflow with script executer executes external script
 
-# Use below urls to check on postman or command prompt
+## Use below urls to check on postman or command prompt
 
 curl --location --request POST 'http://localhost:8080/engine-rest/process-definition/key/workflow-poc1/start' --header 'Content-Type: application/json' --data-raw '{
      "variables": {
@@ -16,20 +15,20 @@ curl --location --request POST 'http://localhost:8080/engine-rest/process-defini
     }
 }'
 
-# Process defination: workflow-poc1
+## Process defination: workflow-poc1
 
-# Get all runing definatins
+## Get all runing definatins
 http://localhost:8080/engine-rest/process-definition?keyLike=workflow-poc1
 
-# Start process with process defination
+## Start process with process defination
 http://localhost:8080/engine-rest/process-definition/key/workflow-poc1/start
 
-# Get all tasks available with perticular process defination
+## Get all tasks available with perticular process defination
 http://localhost:8080/engine-rest/task?processDefinationKey=workflow-poc1
 
-# Complete task by task id and Request body
+## Complete task by task id and Request body
 http://localhost:8080/engine-rest/task/7fb04465-76e1-11ec-b3df-fa2a44d56e9b/complete
-
+```json
 {
 	"variables": {
          "isFasttrackAndCTA": {
@@ -46,5 +45,6 @@ http://localhost:8080/engine-rest/task/7fb04465-76e1-11ec-b3df-fa2a44d56e9b/comp
         }
     }
 }
-
-
+```
+DELETE method type
+http://localhost:8080/engine-rest/task/2dfbc2b1-7d12-11ec-a001-fa2a44d56e9b
