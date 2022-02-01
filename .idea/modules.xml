@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/GitRepo.iml" filepath="$PROJECT_DIR$/.idea/GitRepo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/compress-workflow-in-dmn/compress-workflow-in-dmn.iml" filepath="$PROJECT_DIR$/compress-workflow-in-dmn/compress-workflow-in-dmn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmn-with-bpmn-workflow/dmn-with-bpmn-workflow.iml" filepath="$PROJECT_DIR$/dmn-with-bpmn-workflow/dmn-with-bpmn-workflow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/workflow-poc1/workflow-poc1.iml" filepath="$PROJECT_DIR$/workflow-poc1/workflow-poc1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/workflow-with-dmn/workflow-with-dmn.iml" filepath="$PROJECT_DIR$/workflow-with-dmn/workflow-with-dmn.iml" />
+    </modules>
+  </component>
+</project>
