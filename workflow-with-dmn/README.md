@@ -1,21 +1,21 @@
 # camunda - Implementation
-# Camunda workflow with script executer executes external script also it contains complex user tasks workflow
+##  Camunda workflow with script executer executes external script also it contains complex user tasks workflow
 
-# Process defination: workflow-with-dmn
+##  Process defination: workflow-with-dmn
 
-# Get all runing definatins
+##  Get all runing definatins
 http://localhost:8080/engine-rest/process-definition?keyLike=workflow-with-dmn
 
-# Start process with process defination - pass empty object as to start process variables are not required
+##  Start process with process defination - pass empty object as to start process variables are not required
 http://localhost:8080/engine-rest/process-definition/key/workflow-with-dmn/start
 {}
 
-# Get all tasks available with perticular process defination
+##  Get all tasks available with perticular process defination
 http://localhost:8080/engine-rest/task?processDefinationKey=workflow-with-dmn
 
-# Complete task by task id and Request body
+##  Complete task by task id and Request body
 http://localhost:8080/engine-rest/task/984b4142-7c71-11ec-8193-fa2a44d56e9b/complete
-
+```json
 {
 	"variables": {
         "mapvalues": {
@@ -24,9 +24,10 @@ http://localhost:8080/engine-rest/task/984b4142-7c71-11ec-8193-fa2a44d56e9b/comp
         }
     }
 }
-
-# To Check DMN is deployed and working fine use below API - DMN key is: tpmDecisionTable
+```
+##  To Check DMN is deployed and working fine use below API - DMN key is: tpmDecisionTable
 http://localhost:8080/engine-rest/decision-definition/key/tpmDecisionTable/evaluate
+```json
 {
 	"variables": {
          "isDataCleanUp": {
@@ -51,12 +52,18 @@ http://localhost:8080/engine-rest/decision-definition/key/tpmDecisionTable/evalu
         }
     }
 }
+```
+##  Modify API rest call to get process back to the requester
+http://localhost:8080/engine-rest/process-instance/21c5423c-7d1a-11ec-a200-fa2a44d56e9b/modification
+##  POST /process-instance/aProcessInstanceId/modification
+
 
 # Modify API rest call to get process back to the requester
 http://localhost:8080/engine-rest/process-instance/21c5423c-7d1a-11ec-a200-fa2a44d56e9b/modification
 # POST /process-instance/aProcessInstanceId/modification
 
 # Request Body:
+
 {
     "skipCustomListeners": true,
     "skipIoMappings": true,
@@ -97,4 +104,4 @@ http://localhost:8080/engine-rest/process-instance/21c5423c-7d1a-11ec-a200-fa2a4
     ],
     "annotation": "Modified to resolve an error."
 }
-
+```
