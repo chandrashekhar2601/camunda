@@ -52,4 +52,49 @@ http://localhost:8080/engine-rest/decision-definition/key/tpmDecisionTable/evalu
     }
 }
 
+# Modify API rest call to get process back to the requester
+http://localhost:8080/engine-rest/process-instance/21c5423c-7d1a-11ec-a200-fa2a44d56e9b/modification
+# POST /process-instance/aProcessInstanceId/modification
+
+# Request Body:
+{
+    "skipCustomListeners": true,
+    "skipIoMappings": true,
+    "instructions": [{
+            "type": "startBeforeActivity",
+            "activityId": "Activity_0bs2j7c",
+            "variables": {
+                "isDataCleanUp": {
+                    "value": false,
+                    "local": true,
+                    "type": "Boolean"
+                },
+                "isFastTrack": {
+                    "value": true,
+                    "local": true,
+                    "type": "Boolean"
+                },
+                "isCTABPAdded": {
+                    "value": true,
+                    "local": true,
+                    "type": "Boolean"
+                },
+                "status": {
+                    "value": "Approved",
+                    "local": true,
+                    "type": "String"
+                },
+                "amount": {
+                    "value": "1000000",
+                    "local": true,
+                    "type": "Double"
+                }
+            }
+        }, {
+            "type": "cancel",
+            "activityInstanceId": "Activity_1oy9r7w:58433100-7d1b-11ec-a200-fa2a44d56e9b"
+        }
+    ],
+    "annotation": "Modified to resolve an error."
+}
 
