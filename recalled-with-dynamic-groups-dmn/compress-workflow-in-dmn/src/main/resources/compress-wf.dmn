@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1atnyq5" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="compressWF" name="Compress WF in DMN">
+    <decisionTable id="DecisionTable_1tcgnlt">
+      <input id="Input_1" label="Assignor Group" camunda:inputVariable="groupName">
+        <inputExpression id="InputExpression_1" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0r5y28d">
+          <text>"HM","WFM","BM","Requester"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0l562kg" label="User Action" camunda:inputVariable="userAction">
+        <inputExpression id="LiteralExpression_0aj6ec9" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_162wsco">
+          <text>"Approved","Rejected","Submitted","Recalled"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Result" name="nextGroup" typeRef="string">
+        <outputValues id="UnaryTests_06lk62p">
+          <text>"HM","WFM","BM","NA","Requester"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0hfmsem">
+        <inputEntry id="UnaryTests_1ak120n">
+          <text>"HM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s25517">
+          <text>"Submitted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bzoiar">
+          <text>"WFM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04dip8j">
+        <inputEntry id="UnaryTests_1pzhtfz">
+          <text>"WFM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ar8kei">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rpzfh5">
+          <text>"BM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k9rhec">
+        <inputEntry id="UnaryTests_1t6bof8">
+          <text>"WFM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gf3aud">
+          <text>"Rejected"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0brzbq6">
+          <text>"HM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tqysv1">
+        <inputEntry id="UnaryTests_085chcg">
+          <text>"BM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u9v4zo">
+          <text>"Approved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e2k636">
+          <text>"NA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ogm5k0">
+        <inputEntry id="UnaryTests_1ni77pu">
+          <text>"BM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12ipu16">
+          <text>"Rejected"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0iy0olx">
+          <text>"HM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pw7doh">
+        <inputEntry id="UnaryTests_03txzzh">
+          <text>"HM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_194pb0x">
+          <text>"Recalled"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1roflfm">
+          <text>"HM"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="compressWF">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
