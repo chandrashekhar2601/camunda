@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1atnyq5" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
   <decision id="parallelWF" name="Parallel WF in DMN">
-    <decisionTable id="DecisionTable_1tcgnlt">
-      <input id="Input_1" label="Assignor Group" camunda:inputVariable="groupName">
+    <decisionTable id="DecisionTable_1tcgnlt" hitPolicy="COLLECT">
+      <input id="Input_1" label="Assignor Group" camunda:inputVariable="assignorGroup">
         <inputExpression id="InputExpression_1" typeRef="string" expressionLanguage="javascript">
           <text></text>
         </inputExpression>
         <inputValues id="UnaryTests_0r5y28d">
-          <text>"HM","WFM","BM","Requester"</text>
+          <text>"HM","WFM","BM","COO","CTA"</text>
         </inputValues>
       </input>
       <input id="InputClause_0l562kg" label="User Action" camunda:inputVariable="userAction">
@@ -18,9 +18,14 @@
           <text>"Approved","Rejected","Submitted","Recalled"</text>
         </inputValues>
       </input>
-      <output id="Output_1" label="Result" name="nextGroup" typeRef="string">
+      <input id="InputClause_0r2uxrv" label="Pending with" camunda:inputVariable="count">
+        <inputExpression id="LiteralExpression_15eoevv" typeRef="integer" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Result" name="groups" typeRef="string">
         <outputValues id="UnaryTests_06lk62p">
-          <text>"HM","WFM","BM","NA","Requester"</text>
+          <text>"HM","WFM","BM","NA","COO","CTA"</text>
         </outputValues>
       </output>
       <rule id="DecisionRule_0hfmsem">
@@ -29,6 +34,9 @@
         </inputEntry>
         <inputEntry id="UnaryTests_0s25517">
           <text>"Submitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qmy8yl">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bzoiar">
           <text>"WFM"</text>
@@ -41,8 +49,11 @@
         <inputEntry id="UnaryTests_1ar8kei">
           <text>"Approved"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_09xda9l">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1rpzfh5">
-          <text>"BM"</text>
+          <text>"COO"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1k9rhec">
@@ -51,6 +62,9 @@
         </inputEntry>
         <inputEntry id="UnaryTests_0gf3aud">
           <text>"Rejected"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e707cq">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0brzbq6">
           <text>"HM"</text>
@@ -63,6 +77,9 @@
         <inputEntry id="UnaryTests_1u9v4zo">
           <text>"Approved"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_10v2g5e">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0e2k636">
           <text>"NA"</text>
         </outputEntry>
@@ -73,6 +90,9 @@
         </inputEntry>
         <inputEntry id="UnaryTests_12ipu16">
           <text>"Rejected"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iuyxyp">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0iy0olx">
           <text>"HM"</text>
@@ -85,7 +105,94 @@
         <inputEntry id="UnaryTests_194pb0x">
           <text>"Recalled"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_03hathk">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1roflfm">
+          <text>"HM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ozov3v">
+        <inputEntry id="UnaryTests_042gvmt">
+          <text>"WFM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hl674a">
+          <text>"Approved"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jr7o2o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ln6cje">
+          <text>"CTA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cms0bd">
+        <inputEntry id="UnaryTests_1guil0d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w5kylm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07lxk89">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11c2pzr">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bq8qxt">
+        <inputEntry id="UnaryTests_010si9e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17m3siw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zupdpt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1udg0ph">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r62eup">
+        <inputEntry id="UnaryTests_0ub1vet">
+          <text>"COO"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d10ks7">
+          <text>"Approved"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nniwla">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xxtdzi">
+          <text>"BM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pvv1dc">
+        <inputEntry id="UnaryTests_0rr49j7">
+          <text>"CTA"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zgeg4q">
+          <text>"Approved"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m2rdgm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09cmg7x">
+          <text>"BM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v8xwna">
+        <inputEntry id="UnaryTests_14nv06r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u3d6m6">
+          <text>"Start"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19xetcj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ky98kj">
           <text>"HM"</text>
         </outputEntry>
       </rule>
