@@ -51,7 +51,7 @@ http://localhost:8080/engine-rest/task/3864d5dc-8413-11ec-906c-fa2a44d56e9b/comp
 {
     "variables": {
         "isApproved": {
-            "value": true,
+            "value": false,
             "type": "Boolean"
         }
     }
