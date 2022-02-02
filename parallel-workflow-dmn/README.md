@@ -57,3 +57,69 @@ http://localhost:8080/engine-rest/task/3864d5dc-8413-11ec-906c-fa2a44d56e9b/comp
     }
 }
 ```
+
+## Complete workflow in single user task 
+
+
+http://localhost:8080/engine-rest/process-definition?keyLike=parallel-workflow-dmn-process
+``` json
+{}
+```
+
+http://localhost:8080/engine-rest/process-definition/key/parallel-workflow-dmn-process/start
+``` json
+{
+	"variables": {
+         "assignorGroup": {
+             "value": "HM",
+             "type": "String"
+        },
+        "userAction": {
+             "value": "Start",
+             "type": "String"
+        }
+    }
+}
+```
+
+http://localhost:8080/engine-rest/process-definition/key/parallel-workflow-dmn-process/start
+
+``` json
+{
+	"variables": {
+         "assignorGroup": {
+             "value": "HM",
+             "type": "String"
+        },
+        "userAction": {
+             "value": "Start",
+             "type": "String"
+        }
+    }
+}
+```
+
+### No request body required 
+http://localhost:8080/engine-rest/task?processDefinationKey=parallel-workflow-dmn-process
+
+
+http://localhost:8080/engine-rest/task/bdd0cfc0-843e-11ec-ac83-fa2a44d56e9b/complete
+
+``` json
+{
+	"variables": {
+         "assignorGroup": {
+             "value": "BM",
+             "type": "String"
+        },
+        "userAction": {
+             "value": "Approved",
+             "type": "String"
+        },"count": {
+             "value": 1,
+             "type": "Integer"
+        }
+    }
+}
+
+```
