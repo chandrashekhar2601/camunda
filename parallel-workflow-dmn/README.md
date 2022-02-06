@@ -103,7 +103,7 @@ http://localhost:8080/engine-rest/process-definition/key/parallel-workflow-dmn-p
 http://localhost:8080/engine-rest/task?processDefinationKey=parallel-workflow-dmn-process
 
 
-http://localhost:8080/engine-rest/task/bdd0cfc0-843e-11ec-ac83-fa2a44d56e9b/complete
+http://localhost:8080/engine-rest/task/556002b1-84e7-11ec-858e-fa2a44d56e9b/complete
 
 ``` json
 {
@@ -121,5 +121,19 @@ http://localhost:8080/engine-rest/task/bdd0cfc0-843e-11ec-ac83-fa2a44d56e9b/comp
         }
     }
 }
+
+{
+	"variables": {
+         "assignorGroup": {
+             "value": "WFM",
+             "type": "String"
+        },
+        "userAction": {
+             "value": "Approved",
+             "type": "String"
+        }
+    }
+}
+
 
 ```
