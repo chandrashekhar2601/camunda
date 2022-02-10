@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="migrationRoleDRD" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="MigrationRole" name="Migration Role DMN">
+    <decisionTable id="DecisionTable_0aqm9ns">
+      <input id="Input_1" label="Assignor Group" camunda:inputVariable="assignorGroup">
+        <inputExpression id="InputExpression_1" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1r7oo5x">
+          <text>"WFM","BM","ITCM"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_08s3xzp" label="User Action" camunda:inputVariable="userAction">
+        <inputExpression id="LiteralExpression_0f9hhzw" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0zb6tyc">
+          <text>"Start","Submit","Approve","Reject"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_052c7as" label="Channel Type" camunda:inputVariable="channelType">
+        <inputExpression id="LiteralExpression_05a9isx" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1izyb9d">
+          <text>"Red","Green"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1jf7p6u" label="Receiver Group" camunda:inputVariable="receiverGoup">
+        <inputExpression id="LiteralExpression_1b5414j" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0tfry8t">
+          <text>"WFM","BM"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Pending With Groups" name="groups" typeRef="string">
+        <outputValues id="UnaryTests_0rwujaf">
+          <text>"WFM","BM","ITCM","END"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_1da3pht">
+        <inputEntry id="UnaryTests_1owbv17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g83wwa">
+          <text>"Start"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f15be8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ykotx3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06bj50u">
+          <text>"WFM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ml2wx3">
+        <inputEntry id="UnaryTests_1tox6pp">
+          <text>"WFM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tydffs">
+          <text>"Submit"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vjwsos">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06yernv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10rco8g">
+          <text>"BM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ut7t3c">
+        <inputEntry id="UnaryTests_0rp989x">
+          <text>"BM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ebqp87">
+          <text>"Approve"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06sed4u">
+          <text>"Red"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02yvkv5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18e8l6c">
+          <text>"ITCM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11fs42q">
+        <inputEntry id="UnaryTests_10c6t3i">
+          <text>"BM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fh4r5t">
+          <text>"Approve"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nfmzt2">
+          <text>"Green"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1my3hrb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w4o0wz">
+          <text>"END"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vn649w">
+        <inputEntry id="UnaryTests_0ds9je8">
+          <text>"BM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a5u30z">
+          <text>"Reject"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04be9q9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rdjfne">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mtj9ek">
+          <text>"WFM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wzvqwc">
+        <inputEntry id="UnaryTests_1tarl5h">
+          <text>"ITCM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0isvqeh">
+          <text>"Approve"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07qahkd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16c2wzk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14qy7il">
+          <text>"END"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0crig47">
+        <inputEntry id="UnaryTests_0gois13">
+          <text>"ITCM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xbvz3j">
+          <text>"Reject"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bjladw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iakdre">
+          <text>"WFM"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1400krm">
+          <text>"WFM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0eq7if0">
+        <inputEntry id="UnaryTests_1c08wmm">
+          <text>"ITCM"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05lepeb">
+          <text>"Reject"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dwaymj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jiwkq7">
+          <text>"BM"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0esycvl">
+          <text>"BM"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="MigrationRole">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

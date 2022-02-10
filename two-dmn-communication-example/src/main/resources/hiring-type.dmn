@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1da15wy" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="hireTypeDMN" name="Hire Type DMN">
+    <decisionTable id="DecisionTable_0rl9c84">
+      <input id="Input_1" label="Hire Type ID" camunda:inputVariable="hireType">
+        <inputExpression id="InputExpression_1" typeRef="integer" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Hire Type Name" name="hireTypeName" typeRef="string">
+        <outputValues id="UnaryTests_0od20ik">
+          <text>"IncrementalRole","MigrationRole"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_14cgq24">
+        <inputEntry id="UnaryTests_0dngso0">
+          <text>88</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ayb83z">
+          <text>"IncrementalRole"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_034gi21">
+        <inputEntry id="UnaryTests_19uzmzb">
+          <text>89</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c0y4fr">
+          <text>"MigrationRole"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="hireTypeDMN">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
