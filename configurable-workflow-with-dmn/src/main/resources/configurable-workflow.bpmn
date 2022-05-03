@@ -72,7 +72,7 @@
     <bpmn:scriptTask id="Activity_1a5n74r" name="Start Process" scriptFormat="Javascript">
       <bpmn:incoming>Flow_0ukn511</bpmn:incoming>
       <bpmn:outgoing>Flow_0iuyn8l</bpmn:outgoing>
-      <bpmn:script>var mapvalues = execution.getVariable('mapvalues');
+      <bpmn:script>/*var mapvalues = execution.getVariable('mapvalues');
 var jsonMap = JSON.parse(mapvalues);
 var isDataCleanUp = Boolean(jsonMap.isDataCleanUp);
 var isFastTrack = Boolean(jsonMap.isFastTrack);
@@ -83,7 +83,7 @@ execution.setVariable('isDataCleanUp', isDataCleanUp);
 execution.setVariable('isFastTrack', isFastTrack);
 execution.setVariable('isCTABPAdded', isCTABPAdded);
 execution.setVariable('status', status);
-execution.setVariable('amount', Number(jsonMap.amount));</bpmn:script>
+execution.setVariable('amount', Number(jsonMap.amount));*/</bpmn:script>
     </bpmn:scriptTask>
     <bpmn:sequenceFlow id="Flow_154j8oa" sourceRef="Activity_0z7f42y" targetRef="hiringType" />
     <bpmn:scriptTask id="Activity_0z7f42y" name="Next Task">
@@ -91,7 +91,7 @@ execution.setVariable('amount', Number(jsonMap.amount));</bpmn:script>
       <bpmn:incoming>Flow_1sq2zyn</bpmn:incoming>
       <bpmn:incoming>Flow_0t6czan</bpmn:incoming>
       <bpmn:outgoing>Flow_154j8oa</bpmn:outgoing>
-      <bpmn:script>var mapvalues = execution.getVariable('mapvalues');</bpmn:script>
+      <bpmn:script>//var mapvalues = execution.getVariable('mapvalues');</bpmn:script>
     </bpmn:scriptTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
