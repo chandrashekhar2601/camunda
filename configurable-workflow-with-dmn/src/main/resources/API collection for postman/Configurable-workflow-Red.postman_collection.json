@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "bd65d837-6130-4858-b7c9-563ffe81b307",
+		"name": "Configurable-workflow-Red",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Start Process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"variables\": {\r\n         \"assignorGroup\": {\r\n             \"value\": \"\",\r\n             \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n             \"value\": \"Start\",\r\n             \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n             \"value\": 89,\r\n             \"type\": \"Integer\"\r\n        }\r\n        \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/process-definition/key/configurable-workflow/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"process-definition",
+						"key",
+						"configurable-workflow",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Active Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task?processDefinationKey=configurable-workflow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task"
+					],
+					"query": [
+						{
+							"key": "processDefinationKey",
+							"value": "configurable-workflow"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit by WFM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"WFM\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Submit\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Red\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/7a982541-cb0c-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"7a982541-cb0c-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve by BM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"BM\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Approve\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Red\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/7a982541-cb0c-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"7a982541-cb0c-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve by ITCM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"ITCM\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Approve\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Red\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/7fcfd471-cb0e-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"7fcfd471-cb0e-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve by Cost Manager",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"Cost Manager\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Reject\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Red\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/07d4feca-cb0f-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"07d4feca-cb0f-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject by Cost Manager",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"Cost Manager\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Reject\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Red\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"receiverGoup\": {\r\n            \"value\": \"BM\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/7a982541-cb0c-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"7a982541-cb0c-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject by ITCM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"Cost Manager\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Reject\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Red\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"receiverGoup\": {\r\n            \"value\": \"WFM\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/7a982541-cb0c-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"7a982541-cb0c-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject by BM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"Cost Manager\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Reject\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Red\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"receiverGoup\": {\r\n            \"value\": \"WFM\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/86b3d412-cb10-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"86b3d412-cb10-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="migrationRoleDRD" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
   <decision id="MigrationRole" name="Migration Role DMN">
-    <decisionTable id="DecisionTable_0aqm9ns">
+    <decisionTable id="DecisionTable_0aqm9ns" hitPolicy="COLLECT">
       <input id="Input_1" label="Assignor Group" camunda:inputVariable="assignorGroup">
         <inputExpression id="InputExpression_1" typeRef="string" expressionLanguage="javascript">
           <text></text>
@@ -207,6 +207,40 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0esycvl">
           <text>"BM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f2zeh0">
+        <inputEntry id="UnaryTests_0heyx4p">
+          <text>"Cost Manager"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18n2q8a">
+          <text>"Reject"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r8g3i7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s8bcdj">
+          <text>"BM"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15k7fpi">
+          <text>"BM"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l91pd8">
+        <inputEntry id="UnaryTests_0sl48bz">
+          <text>"Cost Manager"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m6qoi0">
+          <text>"Reject"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xngplk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n0bjbn">
+          <text>"WFM"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ch7q51">
+          <text>"WFM"</text>
         </outputEntry>
       </rule>
     </decisionTable>

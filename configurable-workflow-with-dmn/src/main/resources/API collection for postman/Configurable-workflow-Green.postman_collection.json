@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "d3fe4935-f8f7-4dcd-a4f9-e93151813340",
+		"name": "Configurable-workflow-Green",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Start Process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"variables\": {\r\n         \"assignorGroup\": {\r\n             \"value\": \"\",\r\n             \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n             \"value\": \"Start\",\r\n             \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n             \"value\": 89,\r\n             \"type\": \"Integer\"\r\n        }\r\n        \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/process-definition/key/configurable-workflow/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"process-definition",
+						"key",
+						"configurable-workflow",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Active Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task?processDefinationKey=configurable-workflow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task"
+					],
+					"query": [
+						{
+							"key": "processDefinationKey",
+							"value": "configurable-workflow"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit by WFM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"WFM\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Submit\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Green\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/7a982541-cb0c-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"7a982541-cb0c-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve by HM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variables\": {\r\n        \"assignorGroup\": {\r\n            \"value\": \"BM\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"userAction\": {\r\n            \"value\": \"Approve\",\r\n            \"type\": \"String\"\r\n        },\r\n        \"hireType\": {\r\n            \"value\": 89,\r\n            \"type\": \"Integer\"\r\n        },\r\n        \"channelType\": {\r\n            \"value\": \"Green\",\r\n            \"type\": \"String\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/7a982541-cb0c-11ec-9888-fa2a44d56e9b/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"7a982541-cb0c-11ec-9888-fa2a44d56e9b",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
