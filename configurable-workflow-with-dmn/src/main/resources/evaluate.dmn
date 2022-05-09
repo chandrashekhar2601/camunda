@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0lg4nlj" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="Decision_01jb3t2" name="Number">
+    <informationRequirement id="InformationRequirement_0zqksbx">
+      <requiredDecision href="#Decision_0h51br5" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0buvvdg">
+      <input id="Input_1" label="Name" biodi:width="204" camunda:inputVariable="name">
+        <inputExpression id="InputExpression_1" typeRef="string" expressionLanguage="javascript">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0iynm4i">
+          <text>"ABC","DEF"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Mobile" name="mobile" typeRef="integer" />
+      <rule id="DecisionRule_13l64rh">
+        <inputEntry id="UnaryTests_1cxhfwz">
+          <text>"ABC"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_112o1ay">
+          <text>12345</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1w4kyop">
+        <inputEntry id="UnaryTests_1sbiqa0">
+          <text>"DEF"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nwzui5">
+          <text>67890</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="isadhar" name="Adhar">
+    <informationRequirement id="InformationRequirement_1ag7d1o">
+      <requiredDecision href="#Decision_01jb3t2" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1ir1l2s">
+      <input id="InputClause_1mi06zs" label="Moblie" camunda:inputVariable="mobile">
+        <inputExpression id="LiteralExpression_0um5abk" typeRef="integer" />
+      </input>
+      <output id="OutputClause_0ky57jt" label="Is adhar present" name="isAdharPresent" typeRef="boolean" />
+      <rule id="DecisionRule_0ub4o1y">
+        <inputEntry id="UnaryTests_1y5987u">
+          <text>12345</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wtph6n">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zyimeg">
+        <inputEntry id="UnaryTests_0vpo6md">
+          <text>67890</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bve1uf">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0h51br5" name="evaluate">
+    <variable id="InformationItem_1xo1uzc" name="adharname" typeRef="string" />
+    <literalExpression id="LiteralExpression_030wlp2" expressionLanguage="javascript">
+      <text>var system = java.lang.System; system.out.println("This is Print in Expression and variable name value is: "+testvalue);</text>
+    </literalExpression>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_01jb3t2">
+        <dc:Bounds height="80" width="180" x="160" y="230" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0jg3oa7" dmnElementRef="isadhar">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1nl38d7" dmnElementRef="InformationRequirement_1ag7d1o">
+        <di:waypoint x="250" y="230" />
+        <di:waypoint x="250" y="200" />
+        <di:waypoint x="250" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1dqu2hl" dmnElementRef="InformationRequirement_0zqksbx">
+        <di:waypoint x="250" y="360" />
+        <di:waypoint x="250" y="330" />
+        <di:waypoint x="250" y="310" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_10bmipv" dmnElementRef="Decision_0h51br5">
+        <dc:Bounds height="80" width="180" x="160" y="360" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
